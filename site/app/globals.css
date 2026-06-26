@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #03030a;
+  --foreground: #e0f2fe;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Cyber grid background */
+.cyber-grid {
+  background-image: linear-gradient(rgba(0, 243, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(10, 12, 30, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 243, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.05);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 243, 255, 0.35);
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.12);
+}
+
+/* Neon text */
+.text-neon-cyan {
+  color: #00f3ff;
+  text-shadow: 0 0 8px rgba(0, 243, 255, 0.6);
+}
+.text-neon-purple {
+  color: #bc13fe;
+  text-shadow: 0 0 8px rgba(188, 19, 254, 0.6);
+}
+.text-neon-pink {
+  color: #ff0080;
+  text-shadow: 0 0 8px rgba(255, 0, 128, 0.6);
+}
+
+/* Terminal block */
+.terminal {
+  background: #050510;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: inset 0 0 30px rgba(0, 243, 255, 0.05);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020205;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 243, 255, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 243, 255, 0.45);
+}
+
+/* Scanline overlay */
+.scanline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 243, 255, 0.03) 51%, transparent 52%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
